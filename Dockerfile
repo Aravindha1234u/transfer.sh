@@ -21,5 +21,6 @@ COPY --from=build  /go/bin/transfersh /go/bin/transfersh
 COPY --from=build /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
 
 #ENTRYPOINT ["/go/bin/transfersh", "--listener", ":8080"]
+CMD ["/bin/bash"]
 ENTRYPOINT ["/go/bin/transfersh" "--listener" ":8080","--provider","local","--basedir","/tmp/"]
 EXPOSE 8080
