@@ -3,7 +3,7 @@ ARG GO_VERSION=1.17
 FROM golang:${GO_VERSION}-alpine as build
 
 # Necessary to run 'go get' and to compile the linked binary
-RUN apk add git musl-dev sh
+RUN apk add git musl-dev bash
 
 ADD . /go/src/github.com/dutchcoders/transfer.sh
 
